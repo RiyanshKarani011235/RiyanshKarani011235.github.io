@@ -140,9 +140,9 @@ Notebook.prototype.init = function() {
     this.positionElements();
     $(window).on('resize', function() {
         // decide the sizes of columns
-        // this.resizeColumnsWidth();
+        Notebook.prototype.resizeColumnsWidth();
         // position elements
-        this.positionElements();
+        Notebook.prototype.positionElements();
     });
 
     // doing this solves the (first time sidenotes incorrectly displayed) problem
