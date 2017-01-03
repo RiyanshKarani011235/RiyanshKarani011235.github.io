@@ -11,7 +11,7 @@ var scrollDown = function() {
 }
 
 $(window).load(function () {
-	new Notebook();
+	new Notebook(3, 6, 3);
 
 	// set eventListeners for navigation buttons
 	// up navigation button

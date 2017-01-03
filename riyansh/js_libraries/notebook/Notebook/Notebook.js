@@ -13,7 +13,7 @@ var initDoneFlag = false; // flag representing Notebook initialization status
  * constructor
  *************************
  */
-var Notebook = function() {
+var Notebook = function(left_column_width, middle_column_width, right_column_width) {
 
     // get location of folder containing Notebook.js
     var jsFileLocation = ''
@@ -45,7 +45,7 @@ var Notebook = function() {
     .script(folderLocation + 'utils.js')
     .script(folderLocation + 'Box.js').wait(function() {
         console.log('all scripts loaded');
-        Notebook.prototype.init();
+        Notebook.prototype.init(left_column_width, middle_column_width, right_column_width);
     });
 
     // load fonts
@@ -97,7 +97,11 @@ var Notebook = function() {
     });
 };
 
-Notebook.prototype.init = function() {
+Notebook.prototype.init = function(left_column_width, middle_column_width, right_column_width) {
+
+    console.log(left_column_width);
+    console.log(middle_column_width);
+    console.log(right_column_width);
 
     /*
      * generate three column structure
@@ -110,9 +114,9 @@ Notebook.prototype.init = function() {
     // to enable bootstrap compatibility
     $('.container').append('<div class="row"></div>')
     
-    $('.row').append('<div class="col-md-3 left-column column"></div>');
-    $('.row').append('<div class="col-md-6 middle-column column"></div>')
-    $('.row').append('<div class="col-md-3 right-column column"></div>');
+    $('.row').append('<div class="col-md-' + left_column_width + ' left-column column"></div>');
+    $('.row').append('<div class="col-md-' + middle_column_width + ' middle-column column"></div>')
+    $('.row').append('<div class="col-md-' + right_column_width + ' right-column column"></div>');
     $('.left-column').css('position', 'relative');
     $('.right-column').css('position', 'relative');
 
