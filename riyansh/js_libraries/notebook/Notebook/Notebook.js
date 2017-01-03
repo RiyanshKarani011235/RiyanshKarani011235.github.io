@@ -111,8 +111,8 @@ Notebook.prototype.init = function() {
     $('.container').append('<div class="row"></div>')
     
     $('.row').append('<div class="col-md-3 left-column column"></div>');
-    $('.row').append('<div class="col-md-7 middle-column column"></div>')
-    $('.row').append('<div class="col-md-2 right-column column"></div>');
+    $('.row').append('<div class="col-md-6 middle-column column"></div>')
+    $('.row').append('<div class="col-md-3 right-column column"></div>');
     $('.left-column').css('position', 'relative');
     $('.right-column').css('position', 'relative');
 
@@ -227,7 +227,7 @@ Notebook.prototype.positionElement = function(jqueryObject) {
         var objectBox = new Box(jqueryObject);
 
         // position the box
-        var position = objectBox.positionBox(leftColumnPositionedElementsArray, rightColumnPositionedElementsArray, referencedElement);
+        var position = objectBox.positionBox(leftColumnPositionedElementsArray, rightColumnPositionedElementsArray, referencedElement, jqueryObject.data()['side']);
         if(position == 'left') {
             leftColumnPositionedElementsArray.push(objectBox);
         } else if(position == 'right') {
@@ -290,7 +290,13 @@ Notebook.prototype.draw = function() {
     $('.right-column').find('*').each(function() {
         var referencedElement = $('#' + $(this).data()['sidenote']);
         assert(referencedElement != undefined);
-        Notebook.prototype.underline(referencedElement);
+
+        var underline = $(this).data()['underline'];
+        if(underline != undefined && underline == false) {
+            // don't underline
+        } else {
+            Notebook.prototype.underline(referencedElement);
+        }
     });
 
     try {

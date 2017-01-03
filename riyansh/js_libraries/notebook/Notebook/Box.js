@@ -83,7 +83,7 @@ Box.prototype.moveLeftTo = function(left) {
     this.right += displacement;
 }
 
-Box.prototype.positionBox = function(leftColumnPositionedBoxArray, rightColumnPositionedBoxArray, referencedElement) {
+Box.prototype.positionBox = function(leftColumnPositionedBoxArray, rightColumnPositionedBoxArray, referencedElement, side) {
     
     var maxDisplacementFromParentNote = 100;
 
@@ -96,6 +96,21 @@ Box.prototype.positionBox = function(leftColumnPositionedBoxArray, rightColumnPo
         if(newBox.top < leftColumnPositionedBoxArray[leftColumnPositionedBoxArray.length - 1].bottom) {
             newBox.moveTopTo(leftColumnPositionedBoxArray[leftColumnPositionedBoxArray.length - 1].bottom);
         }
+    } 
+
+    if(side == "left") {
+    	this.copy(newBox);
+    	return 'left';
+    } else if(side == "right") {
+    	newBox.copy(this);
+        if(rightColumnPositionedBoxArray.length != 0) {
+            if(newBox.top < rightColumnPositionedBoxArray[rightColumnPositionedBoxArray.length - 1].bottom) {
+                newBox.moveTopTo(rightColumnPositionedBoxArray[rightColumnPositionedBoxArray.length - 1].bottom);
+            }
+        }
+        newBox.left = newBox.left + (new Box($('.right-column'))).left;
+        this.copy(newBox);
+        return 'right';
     }
 
     if((newBox.top - referencedElementBox.bottom) > maxDisplacementFromParentNote) {
@@ -108,7 +123,7 @@ Box.prototype.positionBox = function(leftColumnPositionedBoxArray, rightColumnPo
         }
         newBox.left = newBox.left + (new Box($('.right-column'))).left;
         this.copy(newBox);
-        return 'right'
+        return 'right';
     }
 
     // keep in the left column
