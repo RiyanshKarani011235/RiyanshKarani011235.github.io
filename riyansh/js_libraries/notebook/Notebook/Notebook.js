@@ -275,11 +275,16 @@ Notebook.prototype.draw = function() {
     });
 
     // generate new underlines
-
     $('.left-column').find('*').each(function() {
         var referencedElement = $('#' + $(this).data()['sidenote']);
         assert(referencedElement != undefined);
-        Notebook.prototype.underline(referencedElement);
+
+        var underline = $(this).data()['underline'];
+        if(underline != undefined && underline == false) {
+            // don't underline
+        } else {
+            Notebook.prototype.underline(referencedElement);
+        }
     });
 
     $('.right-column').find('*').each(function() {

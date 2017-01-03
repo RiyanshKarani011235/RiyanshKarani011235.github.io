@@ -11,6 +11,15 @@ h1 {
     font-size:60px;
 }
 
+a {
+    border: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: black;
+    color: gray;
+    text-decoration: none;
+}
+
 svg {
     position: absolute;
     z-index: 1;
@@ -28,9 +37,9 @@ svg {
 
 .left-column {
     padding: 10px;
-    text-align: center;
+    text-align: justify;
     font-family: 'Reenie Beanie', cursive;
-    font-size: 25px;
+    font-size: 23px;
     color: #0D47A1;
     float: left;
 }
@@ -61,4 +70,13 @@ svg {
 
 .drawing {
     position: relative;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
 }
