@@ -8,6 +8,8 @@
 		<link rel="stylesheet" href="riyansh/css/navigation_buttons.css">
 		<link rel="stylesheet" href="riyansh/css/code.css">
 		<link rel="stylesheet" href="riyansh/css/projects.css">
+		<link rel="stylesheet" href="riyansh/css/publications.css">
+		<link rel="stylesheet" href="riyansh/css/work.css">
 
 		<!-- fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
@@ -47,13 +49,13 @@
 							<p style="margin: 0px; padding: 0px">projects</p>
 						</div>
 					</a>
-					<a class="menu_item" href="https://github.com/riyanshkarani01235">
+					<a class="menu_item" href="#publications_header">
 						<div>
 							<img id="publications_icon" class="menu_thumbnail" src="riyansh/img/publications.png"></img>
 							<p style="margin: 0px; padding: 0px">publications</p>
 						</div>
 					</a>
-					<a class="menu_item" href="https://github.com/riyanshkarani01235">
+					<a class="menu_item" href="#work_header">
 						<div>
 							<img id="work_icon" class="menu_thumbnail" src="riyansh/img/work.png"></img>
 							<p style="margin: 0px; padding: 0px">work</p>
@@ -200,20 +202,92 @@
 					<p class="project_description">
 						Worked on building the electronics, hardware and software for an interdisciplinary project involving building a 4-axis SCARA robot.
 					</p>
+					<div class="project_links">
+						<a href="https://github.com/projectscara2014/scara">GITHUB</a>
+					</div>
 					<!-- sidenote -->
 					<span data-sidenote="project_scara_title">
 						This was the longest and most irritating (at times) project I have ever worked on. But, when things worked, it felt like heaven :)
 					</span>
 				</div>
+				<br>
+
+				<!-- VLSI Chip Design -->
+				<div id="project_vlsi_chip_design">
+					<p id="project_vlsi_chip_design_title" class="project_title">
+						VLSI Chip Design
+					</p>
+					<p class="project_description">
+						Completed schematic entry, layout and corner simulations (with pad frame) for the following circuits using AMI 0.5 micron technology :
+						<ul>
+							<li>8x8 SRAM chip <a href="riyansh/img/SRAM_8x8.png" target="_blank">FINAL LAYOUT</a></li> <li>Ripple carry adder chip<a href="riyansh/img/4_bit_ripple_carry_adder.png" target="_blank">FINAL LAYOUT</a></li>
+							<li>Carry lookahead adder chip</li>
+						</ul>
+					</p>
+					<!-- sidenote -->
+					<span data-sidenote="project_vlsi_chip_design_title">
+						Did this as a part of a 3 month summer training program.
+					</span>
+				</div>
+				<br>
+				<hr>
 
 
 			</div>
 
 			<!-- PUBLICATIONS -->
 			<h2 id="publications_header">Publications</h1>
+			<div id="publications">
+				<p>
+					<span id="that_be_me">Riyansh Karani</span>, Akash Rana, Dhruv Reshamwala, Kishore Saldanha (2016) “A floating point division unit based on Taylor-series expansion algorithm and Iterative Logarithmic Multiplier”. In Proceedings of the Second International Conference on Computer Science, Information Technology (CSITEC -2016).
+				</p>
+				<div class="publication_links">
+					<a id="paper_published_version" href="http://airccj.org/CSCP/vol6/csit65903.pdf">PUBLISHED VERSION</a>
+					<a href="https://drive.google.com/file/d/0B4JG1o0uAKt0MzdaR0R4TXRZS28/view?usp=sharing">ORIGINAL VERSION (RECOMMENDED)</a>
+				</div>
+				<!-- sidenotes -->
+				<span data-sidenote="that_be_me"></span>
+				<span data-sidenote="paper_published_version">To reduce the size of the PDF document, the editors of the journal took screenshots of parts of the paper and added the images in the published copy, because of which parts of the published version are blurry (including all the images). The original version is much more crisp, if you are interested.
+			</div>
+			<br>
+			<hr>
 
 			<!-- WORK -->
 			<h2 id="work_header">Work</h2>
+			<div id="work">
+				<!-- Scandid -->
+				<div id="work_scandid">
+					<p id="work_scandid_title">Full stack developer, Scandid.in</p>
+					<p>
+						Scandid is an e-commerce company located in Pune, India, where I worked as a part of the backend team on the database management system and web crawler system. Additionally, for a brief period, worked with the fronted team on their android platform, and the Google Chrome Extension platform.
+					</p>
+					<!-- sidenotes -->
+					<span data-sidenote="work_scandid_title"></span>
+				</div>
+				<br>
+
+				<!-- IITB -->
+				<div id="work_iitb">
+					<p id="work_iitb_title">Research Intern, Computer Science and Engineering Department, Indian Institute of Technology Bombay</p>
+					<p>
+						Working as a research assistant under the guidance of Professor Ganesh Ramakrishnan at the Computer science and Engineering department at Indian Institute of Technology Bombay.
+						<ul>
+							<li>
+								Worked on building a desktop and android apps for Lokavidya, a social media platform for rural tribal people in the state of Maharashtra. During this project, worked on a video classification problem for converting hierarchically modelled data to Pachinko allocation model.
+							</li>
+							<li>
+								Working as an android developer for Lokacart, an e-commerce platform which aims to restore farmers as the primary vendors of farm products, by providing a direct line of communication between the buyers and the farmers.
+							</li>
+							<li>
+								Working on a research project that aims to use Deep learning and signal processing to build audio-visual saliency models for static video summarisation.
+							</li>
+						</ul>
+					</p>
+				</div>
+				<!-- sidenotes -->
+				<span data-sidenote="work_iitb_title"></span>
+				
+			</div>
 
 			<!-- FOOTER -->
 			<div id="footer"></div>
@@ -222,8 +296,12 @@
 
 		<!-- NAVIGATION BUTTONS -->
 		<div style="position: relative; min-width: 960px">
-			<img id="up_navigation_button" src="riyansh/img/up.png"></img>
-			<img id="down_navigation_button" src="riyansh/img/down.png"></img>
+			<a id="up_navigation_button" href="#profile_image">
+				<img class="navigation_button_image" src="riyansh/img/up.png"></img>
+			</a>
+			<a id="down_navigation_button" href="#footer">
+				<img class="navigation_button_image" src="riyansh/img/down.png"></img>
+			</a>
 		</div>
 
 	</body>
