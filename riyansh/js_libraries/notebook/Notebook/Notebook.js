@@ -126,8 +126,6 @@ Notebook.prototype.init = function(left_column_width, middle_column_width, right
     $('.middle-column').css('visibility', 'hidden');
     $('.rightColumn').css('visibility', 'hidden');
 
-    $('body').append('<div id="drawing"></div>');
-
     // move all content to respective columns 
     $('#content').children().each(function() {
         if(! $(this).hasClass('row')) {
@@ -140,6 +138,9 @@ Notebook.prototype.init = function(left_column_width, middle_column_width, right
             }
         }
     });
+
+    // add a div with id 'drawing' in the body
+    $('body').append('<div id="drawing"></div>');
 
     this.positionElements();
     $(window).on('resize', function() {
@@ -272,6 +273,7 @@ Notebook.prototype.positionElements = function() {
 };
 
 Notebook.prototype.draw = function() {
+    console.log('drawing');
     // remove previous underlines 
     idCount = 0;
     $('#drawing').children('*').each(function() {
@@ -363,6 +365,10 @@ Notebook.prototype.underline = function(jqueryObject) {
 
 var idCount = 0;
 Notebook.prototype.drawLine = function(x1, y1, x2, y2) {
+    console.log('x1 : ' + x1);
+    console.log('x2 : ' + x2);
+    console.log('y1 : ' + y1);
+    console.log('y2 : ' + y2);
     var pathStrokeWidth = 4;
     
     // calculate with, height, top and left of svg element required
@@ -383,7 +389,12 @@ Notebook.prototype.drawLine = function(x1, y1, x2, y2) {
     }
 
     // if height is less than pathStrokeWidth, then set it equal to pathStrokeWidth
-    svgHeight = (svgHeight >= pathStrokeWidth) || pathStrokeWidth;
+    if(svgHeight < pathStrokeWidth) {
+        console.log('if');
+        svgHeight = pathStrokeWidth;
+    } else {
+        console.log('else');
+    }
 
     // create svg
     var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
@@ -399,8 +410,10 @@ Notebook.prototype.drawLine = function(x1, y1, x2, y2) {
     var x1_rel = x1 - svgLeft;
     var x2_rel = x2 - svgLeft;
     var y1_rel = y1 - svgTop;
-    var y2_rel = y2 - svgTop;
+    // var y2_rel = y2 - svgTop;
+    y2_rel = 0;
     var pathPath = 'M ' + x1_rel + ' ' + y1_rel + ' L ' + x2_rel + ' ' + y2_rel;
+    console.log(pathPath);
 
     // create path
     var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');

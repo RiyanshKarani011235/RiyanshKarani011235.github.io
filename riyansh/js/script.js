@@ -1,13 +1,13 @@
 var scrollUp = function() {
 	$('html, body').animate({
 		  scrollTop: $('#header').offset().top
-		}, 1000);
+		}, 500);
 }
 
 var scrollDown = function() {
 	$('html, body').animate({
 		  scrollTop: $('#footer').offset().top
-		}, 1000);
+		}, 500);
 }
 
 $(window).load(function () {
@@ -15,50 +15,30 @@ $(window).load(function () {
 
 	// set eventListeners for navigation buttons
 	// up navigation button
-	$("#up_navigation_button").click(function() {
+	$('#up_navigation_button').click(function() {
 		scrollUp();
 	});
 
 	// down navigation button
-	$("#down_navigation_button").click(function() {
+	$('#down_navigation_button').click(function() {
 		scrollDown();
 	});
 
-	$("#github_icon").click(function() {
-		console.log("github icon clicked");
+	$('#github_icon').click(function() {
+		console.log('github icon clicked');
 		scrollDown();
 	});
 
-	var menuBar = $('#menu_bar');
-	var menuBarBottom = menuBar.offset().top + menuBar.outerHeight();
+	// if an anchor tag with href containing id of another element on the 
+	// page is clicked, then scroll to that part instead of the default
+	// behaviour
+	$(document).on('click', 'a', function(event){
+		if($.attr(this, 'href').charAt(0) == '#') {
+	    	event.preventDefault();
+	    	$('html, body').animate({
+		        scrollTop: $( $.attr(this, 'href') ).offset().top
+		    }, 500);
+		}
+	});
 
-	//when scroll
-	// $(window).scroll(function(){
-
-	// 	console.log("scrolled");
-
-	// 	// keep menu bar fised on the top
-	// 	//Calculate the height of <header>
-	// 	//Use outerHeight() instead of height() if have padding
-	// 	console.log(menuBarBottom); 
-
-	// 	//if scrolled down more than the header’s height
-	// 	if ($(window).scrollTop() > menuBarBottom){
-
-	// 		// if yes, add “fixed” class to the <nav>
-	// 		// add padding top to the #content 
-	// 		// (value is same as the height of the nav)
-	// 		menuBar.addClass('fixed').css('top','0').next()
-	// 		.css('padding-top','60px');
-	// 		console.log('fixed');
-
-	// 	} else {
-
-	// 		// when scroll up or less than aboveHeight,
-	// 		// remove the “fixed” class, and the padding-top
-	// 		menuBar.removeClass('fixed').next()
-	// 		.css('padding-top','0');
-	// 		console.log('released');
-	// 	}
-	// });
 });

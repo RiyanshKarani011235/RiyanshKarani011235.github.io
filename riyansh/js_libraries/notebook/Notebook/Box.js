@@ -85,7 +85,7 @@ Box.prototype.moveLeftTo = function(left) {
 
 Box.prototype.positionBox = function(leftColumnPositionedBoxArray, rightColumnPositionedBoxArray, referencedElement, side) {
     
-    var maxDisplacementFromParentNote = 100;
+    var maxDisplacementFromParentNote = 10;
 
     var referencedElementBox = new Box(referencedElement);
     var newBox = new Box();
