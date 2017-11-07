@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href="riyansh/css/projects.css">
 		<link rel="stylesheet" href="riyansh/css/publications.css">
 		<link rel="stylesheet" href="riyansh/css/work.css">
+		<link rel="stylesheet" href="riyansh/css/achievements.css">
 
 		<!-- fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
@@ -37,7 +38,7 @@
 
 				<div style="clear:left"></div>
 				<div id="menu_bar" class="menu_bar">
-					<a class="menu_item" href="https://github.com/riyanshkarani01235">
+					<a class="menu_item" href="https://github.com/riyanshkarani011235">
 						<div>
 							<img id="github_icon" class="menu_thumbnail" src="riyansh/img/github.png"></img>
 							<p style="margin: 0px; padding: 0px">github</p>
@@ -61,6 +62,12 @@
 							<p style="margin: 0px; padding: 0px">work</p>
 						</div>
 					</a>
+					<a class="menu_item" href="#achievements_header">
+						<div>
+							<img id="achievements_icon" class="menu_thumbnail" src="riyansh/img/trophy.gif"></img>
+							<p style="margin: 0px; padding: 0px">achievements</p>
+						</div>
+					</a>
 					
 				</div>
 			</div>
@@ -77,7 +84,7 @@
 			<span data-sidenote="name" data-side="right" data-underline="false">
 				+1 (872)-333-9826
 			</span>
-			
+
 			<div style="clear:left"></div>
 			<!-- <hr style="color: #fffce5;"></hr> -->
 			<hr/>
@@ -144,6 +151,39 @@
 			</span>
 
 			<hr/>
+
+			<!-- ACHIEVEMENTS -->
+			<h2 id="achievements_header">Achievements</h2>
+			<div id="achievements">
+
+				<div id="MIT_energy_hackathon">
+					<p id="MIT_energy_hackathon_title" class="project_title">
+						MIT Energy Hackathon 2017
+					</p>
+					<p class="project_description">
+						<a href="http://www.purposeenergy.com/">Purpose Energy</a> is a company that uses their <a href="http://www.purposeenergy.com/wastewatersolutions/tribrid-bioreactor/">Tribrid-Bioreactor</a> biogas plant to reuse industrial waste and generate methane rich biogas that can in turn be used
+						to power a Cogen engine that generates electric power. We worked over a period of 36 hours to come up with modifications to their existing Tribrid-Bioreactor design and propose a control system that can 
+						automate and optimize the efficiency of their bioreactor to run at a 100 percent efficiency irrespective of the type, concentration and amount of substrate (waste) that was dumped into the 
+						bioreactor.
+
+						<br/>
+						<br/>
+
+						My contribution to the project was to come up with a 2 staged neural network architecture that first models the biogas plant as a state machine, by training a Recurrent Neural Network to emulate the reactor. This
+						Recurrent Neural Network (RNN) is then used to emulate the biogas plant and a simple Multilayered Neural Newtork is trained to control the output of the RNN (the state variables) to drive the system from some random
+						state to the desired state, by minimizing a specifically designed error function.
+					</p>
+					<div class="achievements_links">
+						<a href="riyansh/documents/MIT_energy_hackathon_2017_project_report.pdf">PROJECT REPORT</a>
+					</div>
+					<!-- sidenote -->
+					<span data-sidenote="MIT_energy_hackathon_title">
+						Thanks to Dave Amirbekyan with his terrific Chemical Engineering skills and expertise.
+				</div>
+				<br>
+				<hr>
+
+			</div>
 
 			<!-- PROJECTS -->
 			<h2 id="projects_header">Projects</h1>
