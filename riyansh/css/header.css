@@ -33,13 +33,14 @@
 
 #profile_image {
 	border-radius: 10px;
-	float: right;
+	/* float: right; */
 	width: 170px;
-	vertical-align: center;
+	/* vertical-align: center; */
 	padding-bottom: 0px;
 	padding-top: 0px;
 	margin-top: 0px;
-	margin-right: 50px;
+	margin-left: 50px;
+	margin-bottom: 50px
 }
 
 .menu_thumbnail {
